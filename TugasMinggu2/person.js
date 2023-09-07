@@ -19,7 +19,7 @@ const Person = (fullName = "unknown", age = 25, isMale = false, avatar) => {
         rename: (newName) => {
             fullName = newName;
         },
-        // Shorthand property untuk mengembalikan semua nilai
+       
         fullName,
         age,
         isMale,
@@ -27,5 +27,5 @@ const Person = (fullName = "unknown", age = 25, isMale = false, avatar) => {
     };
 };
 
-// Export objek Person sebagai sebuah modul
+
 export default Person;
