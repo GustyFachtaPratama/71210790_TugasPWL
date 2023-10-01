@@ -56,8 +56,8 @@ const nextPage = document.querySelector('.nextPagination');
 const PetCardComponent = (pet) => {
   const breed = pet.breeds && pet.breeds.length > 0 ? pet.breeds[0].name : 'Unknown Breed';
   const description = pet.description || 'No description available';
-  const lifeSpan = pet.life_span || 'Unknown';
-  const temperament = pet.temperament || 'Unknown';
+  const lifeSpan = pet.breeds && pet.breeds.length > 0 && pet.breeds[0].life_span ? `Life Span: ${pet.breeds[0].life_span}` : 'Unknown';
+  const temperament = pet.breeds && pet.breeds.length > 0 && pet.breeds[0].temperament ? `Temperament: ${pet.breeds[0].temperament}` : 'Unknown';
   const weight = pet.weight && pet.weight.metric ? `Weight: ${pet.weight.metric} kg` : 'Unknown Weight';
   const height = pet.height && pet.height.metric ? `Height: ${pet.height.metric} cm` : 'Unknown Height';
 
@@ -73,6 +73,8 @@ const PetCardComponent = (pet) => {
     </div>
   </div>`;
 };
+
+
 
 const renderComponent = (filteredPet) => {
   document.querySelector('.petInfo').innerHTML = filteredPet
